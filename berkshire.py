@@ -72,7 +72,7 @@ class berkshire():
            count_series = frame2.groupby(['Start Station', 'End Station']).size()
            new_df = count_series.to_frame(name = 'size').reset_index()
            print (new_df)
-           print(new_df.max())
+           print(new_df.loc[new_df['size'].idxmax()])
            print (new_df.query('(size ==8)'))
            print(frame2.groupby('User Type').size())
            print(frame2.groupby('Gender').size())
